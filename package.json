@@ -1,0 +1,30 @@
+{
+  "name": "contact-manager-app",
+  "version": "1.0.0",
+  "description": "Backend app using Express & Mongoose for managing contact information. Add, edit, and delete contacts with ease. Simplify contact management tasks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mertsevinc-dev/contact-manager-app.git"
+  },
+  "keywords": [
+    "contact",
+    "manager",
+    "app"
+  ],
+  "author": "Sevinc Mert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mertsevinc-dev/contact-manager-app/issues"
+  },
+  "homepage": "https://github.com/mertsevinc-dev/contact-manager-app#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
