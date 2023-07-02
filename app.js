@@ -2,8 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const contactRoutes = require("./routes/contactRoutes");
+const errorHandler = require("./middleware/errorHandler");
 
 app.use(express.json());
+app.use(errorHandler);
 app.use("/api/v1/contacts", contactRoutes);
 
 const port = process.env.PORT || 3000;

@@ -3,7 +3,15 @@ const getAllContacts = async (req, res) => {
 };
 
 const createContact = async (req, res) => {
-  res.send("Create Contact");
+  const { name, email, phone } = req.body;
+  if (!name || !email || !phone) {
+    res.status(400).json({
+      message: "All fields are required",
+    });
+  }
+  res.status(201).json({
+    message: "Contact created successfully",
+  });
 };
 
 const getContact = async (req, res) => {
