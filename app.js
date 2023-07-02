@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const contactRoutes = require("./routes/contactRoute");
+const contactRoutes = require("./routes/contactRoutes");
 
 app.use(express.json());
 app.use("/api/v1/contacts", contactRoutes);
