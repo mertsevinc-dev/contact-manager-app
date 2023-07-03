@@ -6,8 +6,8 @@ const errorHandler = require("./middleware/errorHandler");
 const connectDB = require("./config/dbConnection");
 
 app.use(express.json());
-app.use(errorHandler);
 app.use("/api/v1/contacts", contactRoutes);
+app.use(errorHandler);
 
 const port = process.env.PORT || 3000;
 const start = async () => {
