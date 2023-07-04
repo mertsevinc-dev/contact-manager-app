@@ -45,15 +45,15 @@ const updateContact = asyncHandler(async (req, res) => {
     throw new Error("You are not authorized to update this contact");
   }
 
-  const updateContact = await Contact.findByIdAndUpdate(contactId, req.body, {
+  const updatedContact = await Contact.findByIdAndUpdate(contactId, req.body, {
     new: true,
     runValidators: true,
   });
-  if (!contact) {
+  if (!updatedContact) {
     res.status(404);
     throw new Error("Contact not found");
   }
-  res.status(200).json(updateContact);
+  res.status(200).json(updatedContact);
 });
 
 const deleteContact = asyncHandler(async (req, res) => {
@@ -66,15 +66,15 @@ const deleteContact = asyncHandler(async (req, res) => {
 
   if (contact.user_id.toString() !== req.user._id.toString()) {
     res.status(401);
-    throw new Error("You are not authorized to update this contact");
+    throw new Error("You are not authorized to delete this contact");
   }
 
-  const deleteContact = await Contact.findByIdAndDelete(contactId);
-  if (!contact) {
+  const deletedContact = await Contact.findByIdAndDelete(contactId);
+  if (!deletedContact) {
     res.status(404);
     throw new Error("Contact not found");
   }
-  res.status(200).json(deleteContact);
+  res.status(200).json(deletedContact);
 });
 
 module.exports = {
